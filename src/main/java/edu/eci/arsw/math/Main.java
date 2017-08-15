@@ -5,22 +5,21 @@
  */
 package edu.eci.arsw.math;
 
-import java.util.Arrays;
-
 /**
  *
  * @author hcadavid
  */
 public class Main {
-
-    public static void main(String a[]) {
-        System.out.println(bytesToHex(PiDigits.getDigits(0, 10)));
-        System.out.println(bytesToHex(PiDigits.getDigits(1, 100)));
-        System.out.println(bytesToHex(PiDigits.getDigits(1, 1000000)));
-    }
-
     private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
-
+    public static void main(String a[]) {
+        System.out.println(bytesToHex(PiDigits.getDigits(0,200000,Runtime.getRuntime().availableProcessors()*2)));
+        //System.out.println(bytesToHex(PiDigits.getDigits(0,200000,Runtime.getRuntime().availableProcessors())));
+        //System.out.println(bytesToHex(PiDigits.getDigits(1,100,10)));
+        //System.out.println(bytesToHex(PiDigits.getDigits(0,200000,500)));
+        //System.out.println(bytesToHex(PiDigits.getDigits(0,200000,200));
+        //System.out.println(bytesToHex(PiDigits.getDigits(0,200000,1)));
+    }
+   
     public static String bytesToHex(byte[] bytes) {
         char[] hexChars = new char[bytes.length * 2];
         for (int j = 0; j < bytes.length; j++) {
